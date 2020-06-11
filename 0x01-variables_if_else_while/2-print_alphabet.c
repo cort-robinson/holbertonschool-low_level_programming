@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main -
+ * main - print alphabet followed by newline
  * Return: 0 if no errors
  **/
 
@@ -9,7 +9,7 @@ int main(void)
 {
 	char ch;
 
-	for (ch='a'; ch <= 'z'; ch++)
+	for (ch = 'a'; ch <= 'z'; ch++)
 	{
 		putchar(ch);
 	}
