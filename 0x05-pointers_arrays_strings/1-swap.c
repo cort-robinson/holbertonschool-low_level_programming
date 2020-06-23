@@ -6,10 +6,10 @@
  * @b: variable int 2.
  * Return: Void.
  */
-void swap_int(int *a, int *b);
+void swap_int(int *a, int *b)
 {
 	int temp_assignment = *a;
 
 	*a = *b;
-	*b = *temp_assignment;
+	*b = temp_assignment;
 }
