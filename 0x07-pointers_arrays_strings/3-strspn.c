@@ -21,7 +21,6 @@ unsigned int _strspn(char *s, char *accept)
 			{
 				matches++;
 			}
-			
 		}
 		if (temp == matches)
 		{
