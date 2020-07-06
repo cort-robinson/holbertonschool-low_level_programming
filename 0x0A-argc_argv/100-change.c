@@ -20,8 +20,14 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
+
 	i = atoi(argv[1]);
 
+	if (i <= 0)
+	{
+		printf("0\n");
+		return (0);
+	}
 	while (change + 25 <= i)
 	{
 		change += 25;
