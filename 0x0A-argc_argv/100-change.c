@@ -13,9 +13,11 @@
 int main(int argc, char *argv[])
 {
 	int change = 0, coins = 0;
-	int i;
+	int i, j;
+	int check_size = 5;
+	int check[] = {25, 10, 5, 2, 1};
 
-	if (argc <= 2)
+	if (argc < 2)
 	{
 		printf("Error\n");
 		return (1);
@@ -28,30 +30,13 @@ int main(int argc, char *argv[])
 		printf("0\n");
 		return (0);
 	}
-	while (change + 25 <= i)
+	for (j = 0; j < check_size; j++)
 	{
-		change += 25;
-		coins += 1;
-	}
-	while (change + 10 <= i)
-	{
-		change += 10;
-		coins += 1;
-	}
-	while (change + 5 <= i)
-	{
-		change += 5;
-		coins += 1;
-	}
-	while (change + 2 <= i)
-	{
-		change += 2;
-		coins += 1;
-	}
-	while (change + 1 <= i)
-	{
-		change += 1;
-		coins += 1;
+		while (change + check[j] <= i)
+		{
+			change += check[j];
+			coins += 1;
+		}
 	}
 	printf("%d\n", coins);
 	return (0);
