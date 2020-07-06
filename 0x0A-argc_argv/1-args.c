@@ -4,6 +4,7 @@
 /**
  * main - Prints the number of arguments passed into it.
  * @argc: Argument count.
+ * @argv: Arguments given to main.
  * Return: Number of arguments passed to program.
  */
 
