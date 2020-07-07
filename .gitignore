@@ -103,3 +103,10 @@
 0x09-static_libraries/9-strcpy.o
 0x09-static_libraries/100-atoi.o
 0x0A-argc_argv/a.out
+0x0B-malloc_free/0-main.c
+0x0B-malloc_free/1-main.c
+0x0B-malloc_free/2-main.c
+0x0B-malloc_free/3-main.c
+0x0B-malloc_free/4-main.c
+0x0B-malloc_free/5-main.c
+0x0B-malloc_free/_putchar.c
