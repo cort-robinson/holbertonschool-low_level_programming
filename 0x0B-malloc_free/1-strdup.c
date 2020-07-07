@@ -12,18 +12,15 @@
 
 char *_strdup(char *str)
 {
-	int i;
+	int i, length;
 	char *ptr;
 
-	for (i = 0; str[i]; i++)
-	{}
-
-	ptr = (char *) malloc(i * sizeof(char));
 	if (str == NULL)
 		return (NULL);
-	for (i = 0; str[i]; i++)
-	{
+	for (length = 0; str[length]; length++)
+		;
+	ptr = (char *) malloc(length + 1 * sizeof(char));
+	for (i = 0; i <= length; i++)
 		ptr[i] = str[i];
-	}
 	return (ptr);
 }
