@@ -10,18 +10,18 @@
 
 char *argstostr(int ac, char **av)
 {
-	int i, j, k = 0, lengthsum;
+	int i, j, len= 0, k = 0;
 	char *ptr;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	for (lengthsum = 0; i < ac; i++)
+	for (i = 0; i < ac; i++)
 	{
-		for (j = 0; av[lengthsum][j]; j++)
-			;
+		for (j = 0; av[i][j]; j++)
+			len++;
 	}
-	ptr = malloc(lengthsum + 1 * sizeof(char));
+	ptr = malloc(len + 1 * sizeof(char));
 	if (ptr == NULL)
 		return (NULL);
 	for (i = 0; i < ac; i++, k++)
