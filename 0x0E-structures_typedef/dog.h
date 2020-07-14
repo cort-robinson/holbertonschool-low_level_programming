@@ -15,4 +15,6 @@ typedef struct dog
 	char *owner;
 } dog;
 
+int _putchar(char c);
+
 #endif /* DOG_H */
