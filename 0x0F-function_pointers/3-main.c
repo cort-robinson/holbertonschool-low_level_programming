@@ -18,17 +18,6 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	op =  get_op_func(argv[2]);
-	for (i = 0; ops[i] ; i++)
-	{
-		if (*argv[2] == ops[i])
-			break;
-	}
-	if (!ops[i])
-	{
-		printf("Error\n");
-		exit(99);
-	}
-
 	n1 = atoi(argv[1]);
 	n2 = atoi(argv[3]);
 
