@@ -7,10 +7,9 @@
  * Return: 0 if no errors, else 1;
  */
 
-int main(void)
+int main(int argc, char *argv[])
 {
-	int (*op)(int, int), n1, n2, argc = 4;
-	char *argv[] = {"./a.out", "25", "/", "5"};
+	int (*op)(int, int), n1, n2;
 
 	if (argc != 4)
 	{
