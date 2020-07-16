@@ -9,7 +9,7 @@
 
 int main(int argc, char *argv[])
 {
-	int (*op)(int, int), n1, n2, i;
+	int (*op)(int, int), n1, n2;
 	char ops[] = {'+', '-', '*', '/', '%'}, *opcheck;
 
 	if (argc != 4)
