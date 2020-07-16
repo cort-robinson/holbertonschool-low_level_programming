@@ -19,11 +19,6 @@ int main(int argc, char *argv[])
 	}
 	op =  get_op_func(argv[2]);
 	opcheck = strchr(ops, *argv[2]);
-	if (opcheck == NULL)
-	{
-		printf("Error\n");
-		exit(99);
-	}
 	n1 = atoi(argv[1]);
 	n2 = atoi(argv[3]);
 
