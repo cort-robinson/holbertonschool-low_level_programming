@@ -10,7 +10,6 @@
 int main(int argc, char *argv[])
 {
 	int (*op)(int, int), n1, n2;
-	char ops[] = {'+', '-', '*', '/', '%'}, *opcheck;
 
 	if (argc != 4)
 	{
@@ -18,7 +17,6 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	op =  get_op_func(argv[2]);
-	opcheck = strchr(ops, *argv[2]);
 	n1 = atoi(argv[1]);
 	n2 = atoi(argv[3]);
 
