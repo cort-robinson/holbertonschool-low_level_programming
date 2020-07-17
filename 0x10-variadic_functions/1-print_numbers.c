@@ -24,5 +24,4 @@ void print_numbers(const char *seperator, const unsigned int n, ...)
 			printf("%d%s", va_arg(valist, int), seperator);
 	}
 	va_end(valist);
-	return;
 }
