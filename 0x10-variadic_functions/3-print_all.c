@@ -40,20 +40,40 @@ void print_all(const char * const format, ...)
 	printf("\n");
 }
 
+/**
+ * print_char - Prints a character.
+ * @args: Character to print.
+ */
+
 void print_char(va_list args)
 {
 	printf("%c", va_arg(args, int));
 }
+
+/**
+ * print_int - Prints and integer.
+ * @args: Integer to print
+ */
 
 void print_int(va_list args)
 {
 	printf("%d", va_arg(args, int));
 }
 
+/**
+ * print_float - Prints a float.
+ * @args: Float to print.
+ */
+
 void print_float(va_list args)
 {
 	printf("%f", va_arg(args, double));
 }
+
+/**
+ * print_string - Prints a string.
+ * @args: String to print.
+ */
 
 void print_string(va_list args)
 {
