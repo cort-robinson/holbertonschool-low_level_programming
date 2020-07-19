@@ -6,6 +6,11 @@
 #include <stdarg.h>
 #include <string.h>
 
+/**
+ * struct print - Operators and related print functions.
+ * @op: Operator in list of type op_t.
+ * @f: Function pointer in list of type op_t.
+ */
 typedef struct print
 {
 	char *op;
