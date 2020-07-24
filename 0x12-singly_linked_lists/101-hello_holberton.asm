@@ -1,28 +1,43 @@
+; printf1_64.asm   print an integer from storage and from a register
+; Assemble:	nasm -f elf64 -l printf1_64.lst  printf1_64.asm
+; Link:		gcc -o printf1_64  printf1_64.o
+; Run:		./printf1_64
+; Output:	Hello, Holberton
+
+; Equivalent C code
+; /* printf1.c  print a long int, 64-bit, and an expression */
+; #include <stdio.h>
+; int main()
+; {
+;
+;   printf("Hello, Holberton\n");
+;   return 0;
+; }
+
+; Declare external function
+        extern	printf		; the C function, to be called
+
+        SECTION .data		; Data section, initialized variables
+
+	a:	dq	5	; long int a=5;
+fmt:    db "Hello, Holberton", 10, 0	; The printf format, "\n",'0'
 
 
-section .text                   ;section declaration
+        SECTION .text           ; Code section.
 
-                                ;we must export the entry point to the ELF linker or
-    global  _start              ;loader. They conventionally recognize _start as their
-			                          ;entry point. Use ld -e foo to override the default.
+        global main		; the standard gcc entry point
+main:				; the program label for the entry point
+        push    rbp		; set up stack frame
+	
+	mov	rax,[a]		; put "a" from store into register
+	add	rax,2		; a+2  add constant 2
+	mov	rdi,fmt		; format for printf
+	mov	rsi,[a]         ; first parameter for printf
+	mov	rdx,rax         ; second parameter for printf
+	mov	rax,0		; no xmm registers
+        call    printf		; Call C function
 
-_start:
+	pop	rbp		; restore stack
 
-                                ;write our string to stdout
-
-    mov     edx,len             ;third argument: message length
-    mov     ecx,msg             ;second argument: pointer to message to write
-    mov     ebx,1               ;first argument: file handle (stdout)
-    mov     eax,4               ;system call number (sys_write)
-    int     0x80                ;call kernel
-
-                                ;and exit
-
-  	mov     ebx,0               ;first syscall argument: exit code
-    mov     eax,1               ;system call number (sys_exit)
-    int     0x80                ;call kernel
-
-section .data                   ;section declaration
-
-msg db      "Hello, world!",0xa ;our dear string
-len equ     $ - msg             ;length of our dear string
+	mov	rax,0		; normal, no error, return value
+	ret			; return
