@@ -29,7 +29,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (strcmp(tmp->key, key) == 0)
 		{
-			tmp->value = strdup(value);
+			new->value = strdup(value);
+			free(new->value);
+			free(new);
 			return (1);
 		}
 		tmp = tmp->next;
@@ -40,7 +42,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		free(new->key);
 		free(new->value);
-		free(new);
 		return (0);
 	}
 	new->next = head;
