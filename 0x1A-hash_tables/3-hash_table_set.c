@@ -19,13 +19,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	if (ht == NULL)
 		return (0);
-	if (strcmp(key, "") == 0)
-		return (0);
 
-	new->value = strdup(value);
 	new->key = strdup(key);
+	new->value = strdup(value);
 	new->next = head;
 	head = new;
+
+	ht->array[idx] = head;
 
 	return (1);
 }
