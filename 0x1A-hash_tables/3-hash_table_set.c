@@ -12,14 +12,12 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int idx = key_index((const unsigned char *)key, ht->size);
-	hash_node_t *new = malloc(sizeof(hash_node_t));
+	hash_node_t *new;
 	hash_node_t *head = ht->array[idx];
 
+	new = malloc(sizeof(hash_node_t));
 	if (new == NULL)
-	{
-		free(new);
 		return (0);
-	}
 	if (ht == NULL)
 	{
 		free(new);
