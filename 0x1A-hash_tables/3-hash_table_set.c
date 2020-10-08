@@ -27,16 +27,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	head = ht->array[idx];
 	tmp = head;
 
-	if (head != NULL)
-		while (tmp->next)
+	while (tmp)
+	{
+		if (strcmp(tmp->key, key) == 0)
 		{
-			if (tmp->key == key)
-			{
-				free(tmp);
-				break;
-			}
-			tmp = tmp->next;
+			tmp->value = strdup(value);
+			return (1);
 		}
+		tmp = tmp->next;
+	}
 	new->key = strdup(key);
 	new->value = strdup(value);
 	if (new->key == NULL || new->value == NULL)
